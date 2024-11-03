@@ -272,17 +272,61 @@ body {
 }
 
 .header {
-  background-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.8)
-    ),
-    url("assets/header.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-
+  position: relative;
+  height: 100vh; /* Adjust height as needed */
+  overflow: hidden;
 }
+
+.header__container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white; /* Change as needed */
+}
+
+.header__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the image covers the div */
+  z-index: 1; /* Keeps the image behind text */
+  
+}
+
+.header__content {
+  position: relative;
+  z-index: 2; /* Ensures the text is above the image */
+  padding: 20px; /* Optional padding */
+}
+
+h1, h2, p {
+  margin: 10px 0;
+}
+
+.header__btn {
+  margin-top: 20px;
+}
+
+/* Optional button styling */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #FF5733; /* Example color */
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #C70039; /* Darker shade for hover effect */
+}
+
 
 .header__container {
   padding-block: 10rem;
